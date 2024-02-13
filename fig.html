@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Canvas id="canvas" ></Canvas><br>
+    <Canvas id="canva" ></Canvas><br>
+    <canvas id="holst"></canvas> <br><br>
+    <canvas id="cycle"></canvas><br>
+    <canvas id="lline"></canvas><br>
+    <canvas id="kletka"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx =canvas.getContext('2d');
+        // Крестик
+        ctx.moveTo(10,20);
+        ctx.lineTo(50,70);
+        ctx.stroke();
+        ctx.moveTo(50,20);
+        ctx.lineTo(10,70);
+        ctx.stroke();
+        // Стрелочка
+        ctx.moveTo(100,50);
+        ctx.lineTo(200,50);
+        ctx.stroke();
+        ctx.moveTo(200,50);
+        ctx.lineTo(170,25);
+        ctx.stroke();
+        ctx.moveTo(200,50);
+        ctx.lineTo(170,75);
+        ctx.stroke();
+
+ 
+        var canva = document.getElementById('canva');
+        var ct =canva.getContext('2d');
+        // Квадратик в квадратике
+        ct.fillStyle='black';
+        ct.fillRect(10,20,100,100);
+        ct.stroke();
+        ct.clearRect(20,30,50,50);
+        ct.stroke();
+        
+        var ctx = canva.getContext('2d');
+        ctx.moveTo(200,50);
+        ctx.arc(200,50,70,Math.PI,0,5);
+        ctx.stroke();
+        ctx.moveTo(200,50);
+        ctx.lineTo(270,50);
+        ctx.stroke();
+
+        var canv = document.getElementById('holst');
+        var x=canv.getContext('2d');
+        x.fillStyle='black';
+        x.arc(30,30,70,0,1.5,Math.Pi);
+        x.fill();
+
+        var can = document.getElementById('cycle');
+        var y=can.getContext('2d');
+        for(var i=0;i<2;i++)
+        {
+            if(i==0)
+            {
+                y.fillStyle='green';
+                y.fillRect(10,20,50,50);
+                y.stroke();
+            }
+            if(i==1)
+            {
+                y.fillStyle='red';
+                y.fillRect(10,80,50,50);
+                y.stroke();
+            }
+        }
+
+        var cam = document.getElementById('lline');
+        var ctx=cam.getContext('2d');
+        var x=0;
+        for(var i=0;i<=10;i++)
+        {
+            console.log(x);
+            ctx.moveTo(10,10+parseInt(x));
+            ctx.lineTo(100,10+parseInt(x));
+            ctx.stroke();
+             x+=10;
+        }
+       
+        var cam = document.getElementById('kletka');
+        var ctx=cam.getContext('2d');
+        var x=0;
+        for(var i=0;i<=10;i++)
+        {
+            console.log(x);
+            ctx.moveTo(10,10+parseInt(x));
+            ctx.lineTo(110,10+parseInt(x));
+            ctx.stroke();
+             x+=10;
+        }
+        x=0;
+        for(var j=0;j<=10;j++)
+        {
+            console.log(x);
+            ctx.moveTo(10+parseInt(x),10);
+            ctx.lineTo(10+parseInt(x),110);
+            ctx.stroke();
+             x+=10;
+        }
+    </script>
+</body>
+</html>
